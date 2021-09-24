@@ -10,7 +10,7 @@ int letterCount(string str);
 int digitCount(string str);
 int numberCount(string str);
 bool contains(string str, string key);
-void changeCase(string str, bool toUpper);
+void changeCase(string &str, bool toUpper);
 vector<int> countWhole(string str);
 
 int main() {
@@ -20,6 +20,8 @@ int main() {
 	cout << numberCount(str) << endl;
 	cout << contains(str, "miami") << endl;
 	vector<int> number = countWhole(str);
+	changeCase(str, true);
+	cout << str << endl;
 	cout << number.at(0) << endl;
 	cout << number.at(1) << endl;
 	cout << number.at(2) << endl;
@@ -87,7 +89,7 @@ bool contains(string str, string key) {
 	return true;
 }
 
-void changeCase(string str, bool toUpper) {
+void changeCase(string &str, bool toUpper) {
 	for(int i = 0; i < str.size(); i++) {
 		if(toUpper) {
 			if(str[i] <= 122 && str[i] >= 97) {
