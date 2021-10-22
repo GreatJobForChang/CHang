@@ -72,7 +72,11 @@ int main()
     {//parent process: collect the user input from the terminal and send via the pipe
         ssize_t nread;
         int fds;
+<<<<<<< HEAD
         char * myfifos =(char*)"/tmp/AtoB"; //(2)// name the pipe, should be different
+=======
+        char * myfifos = "/tmp/AtoB"; //(2)// name the pipe, should be different
+>>>>>>> bda795474f43cce898d46de01f360a61c891fa04
 
         /* create the FIFO (named pipe) */
         mkfifo(myfifos, 0666);
