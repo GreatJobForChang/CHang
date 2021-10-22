@@ -39,7 +39,7 @@ int main()
         char buf[MAX_BUF];// buffer for collect the input
         /* open, read, and display the message from the FIFO */
         fd = open(myfifo, O_RDONLY);// Open the pipe, with the name:myfifo, mode:O_RDONLY(just read the data) and return file descriptor (fd) return -1 if failed
-        while (*****)//(1)// explain (c)// we need to wait the other to create the FIFO, a.k.a., the named pipe. It may have not been created yet if you run this code first.
+        while (fd < 0)//(1)// explain (c)// we need to wait the other to create the FIFO, a.k.a., the named pipe. It may have not been created yet if you run this code first.
         {fd = open(myfifo, O_RDONLY);}
         cout<<"fd is: "<<fd<<endl;
         int count=0;
@@ -72,7 +72,7 @@ int main()
     {//parent process: collect the user input from the terminal and send via the pipe
         ssize_t nread;
         int fds;
-        char * myfifos = "/tmp/*****"; //(2)// name the pipe, should be different
+        char * myfifos = "/tmp/BtoA"; //(2)// name the pipe, should be different
 
         /* create the FIFO (named pipe) */
         mkfifo(myfifos, 0666);
