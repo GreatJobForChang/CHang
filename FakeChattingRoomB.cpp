@@ -34,12 +34,12 @@ int main()
         exit(-1);
     }else if (pid == 0)
     { //child process: collect the recived data from the named pipe and display in the terminal
-        char * myfifo = "/tmp/AtoB";  // name the pipe, that is why we call it named pipe, you can access this as long as you have the name
+        char * myfifo = (char*)"/tmp/AtoB";  // name the pipe, that is why we call it named pipe, you can access this as long as you have the name
         int fd=-1;  // file descriptor (fd)
         char buf[MAX_BUF];// buffer for collect the input
         /* open, read, and display the message from the FIFO */
         fd = open(myfifo, O_RDONLY);// Open the pipe, with the name:myfifo, mode:O_RDONLY(just read the data) and return file descriptor (fd) return -1 if failed
-        while (*****)//(1)// explain (c)// we need to wait the other to create the FIFO, a.k.a., the named pipe. It may have not been created yet if you run this code first.
+        while (fd < 0)//(1)// explain (c)// we need to wait the other to create the FIFO, a.k.a., the named pipe. It may have not been created yet if you run this code first.
         {fd = open(myfifo, O_RDONLY);}
         cout<<"fd is: "<<fd<<endl;
         int count=0;
@@ -72,8 +72,7 @@ int main()
     {//parent process: collect the user input from the terminal and send via the pipe
         ssize_t nread;
         int fds;
-        char * myfifos = "/tmp/*****"; //(2)// name the pipe, should be different
-
+        char * myfifos =(char*)"/tmp/BtoA"; //(2)// name the pipe, should be different
         /* create the FIFO (named pipe) */
         mkfifo(myfifos, 0666);
 
