@@ -40,10 +40,29 @@ class RA
         int Salary;
 };
 
-class AboutMe
+class AboutMe: public Student, public RA {
 //=====TO DO==================
 //complete the definition for AboutMe
-
+    public:
+	AboutMe() {}
+	AboutMe(int id, int salary)
+	{
+	    ID = id;
+	    Salary = salary;
+	}
+	void setMyID(int id)
+	{
+	    ID = id;
+	}
+	void setSalary(int salary)
+	{
+	    Salary = salary;
+	}
+	void DisplayInfo()
+	{
+	    cout<<"My ID in Miami is: "<<ID<<" ";
+	    cout<<"My salary as RA is: "<<Salary<<endl;
+	}
 };
 
 int main()
