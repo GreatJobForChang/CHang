@@ -11,7 +11,7 @@ MyTime:: MyTime(int hr, int mi){
 }
 
 //=====TO DO=====(e)=============
-MyTime operator+(const MyTime& m)
+MyTime MyTime::operator+(const MyTime& m)
 {
     // complete the operator overloading for +
     MyTime time;
@@ -23,11 +23,11 @@ MyTime operator+(const MyTime& m)
 
 
 //=====TO DO=====(f)=============
-boolean operator<(const MyTime& m)
+bool MyTime::operator<(const MyTime& B)
 {
     // complete the operator overloading for <
-    timeA = 60 * this->hour + this->min;
-    timeB = 60 * m.hour + m.min;
+    int timeA = 60 * this->hour + this->min;
+    int timeB = 60 * B.hour + B.min;
     return timeA < timeB;
 }
 MyTime::~MyTime()

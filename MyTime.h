@@ -8,9 +8,9 @@ class MyTime
         ~MyTime();
         void displayTime();
     //operation overload for + (e)
-    operator+;
+	MyTime operator+(const MyTime& m);
     //operation overload for > (f)
-    operator<;
+    	bool operator<(const MyTime& B);
     
 
     private:
