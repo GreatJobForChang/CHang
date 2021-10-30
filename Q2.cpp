@@ -26,10 +26,16 @@ class Student
 class CSStudent: public Student {
 //=====TO DO==================
 //complete the definition for CSStudent
+    public:
+	CSStudent() {}
+	CSStudent(int id)
+	{
+	    this->ID = id;
+	}
 	void ShowMajor() 
 	{
 	    cout<<"I am a student majoring Computer Science\n";
-	    cout<<"And My ID is"<<ID<<endl;
+	    cout<<"And My ID is "<<ID<<endl;
 	}
 };
 
@@ -38,10 +44,16 @@ class CSStudent: public Student {
 class SEStudent: public Student {
 //=====TO DO==================
 //complete the definition for SEStudent
+    public:
+	SEStudent() {}
+	SEStudent(int id)
+	{
+	    this->ID = id;
+	}
 	void ShowMajor() 
 	{
 	    cout<<"I am a student majoring Software Engineering\n";
-	    cout<<"And My ID is"<<ID<<endl;
+	    cout<<"And My ID is "<<ID<<endl;
 	}
 };
 
